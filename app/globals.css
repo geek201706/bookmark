@@ -1,26 +1,321 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fafaf9;
+    --foreground: #1c1917;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom colors for mental health theme */
+@layer utilities {
+  /* Sage greens - calming and natural */
+  .bg-sage-50 {
+    background-color: #f6f7f4;
+  }
+  .bg-sage-100 {
+    background-color: #e8ebe3;
+  }
+  .bg-sage-200 {
+    background-color: #d4dacd;
+  }
+  .bg-sage-300 {
+    background-color: #b5c0a8;
+  }
+  .bg-sage-400 {
+    background-color: #9aaa87;
+  }
+  .bg-sage-500 {
+    background-color: #7d8f6b;
+  }
+  .bg-sage-600 {
+    background-color: #647355;
+  }
+  .bg-sage-700 {
+    background-color: #505c44;
+  }
+  .bg-sage-800 {
+    background-color: #3d4735;
+  }
+  .bg-sage-900 {
+    background-color: #2a3126;
+  }
+  .bg-sage-200\/50 {
+    background-color: rgb(212 218 205 / 50%);
+  }
+
+  .text-sage-50 {
+    color: #f6f7f4;
+  }
+  .text-sage-100 {
+    color: #e8ebe3;
+  }
+  .text-sage-200 {
+    color: #d4dacd;
+  }
+  .text-sage-300 {
+    color: #b5c0a8;
+  }
+  .text-sage-400 {
+    color: #9aaa87;
+  }
+  .text-sage-500 {
+    color: #7d8f6b;
+  }
+  .text-sage-600 {
+    color: #647355;
+  }
+  .text-sage-700 {
+    color: #505c44;
+  }
+  .text-sage-800 {
+    color: #3d4735;
+  }
+  .text-sage-900 {
+    color: #2a3126;
+  }
+
+  .border-sage-100 {
+    border-color: #e8ebe3;
+  }
+  .border-sage-200 {
+    border-color: #d4dacd;
+  }
+  .border-sage-300 {
+    border-color: #b5c0a8;
+  }
+  .border-sage-400 {
+    border-color: #9aaa87;
+  }
+  .border-sage-800 {
+    border-color: #3d4735;
+  }
+
+  .from-sage-50 {
+    --tw-gradient-from: #f6f7f4;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-100 {
+    --tw-gradient-from: #e8ebe3;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-200 {
+    --tw-gradient-from: #d4dacd;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-300 {
+    --tw-gradient-from: #b5c0a8;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-400 {
+    --tw-gradient-from: #9aaa87;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-500 {
+    --tw-gradient-from: #7d8f6b;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-sage-600 {
+    --tw-gradient-from: #647355;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .to-sage-100 {
+    --tw-gradient-to: #e8ebe3;
+  }
+  .to-sage-200 {
+    --tw-gradient-to: #d4dacd;
+  }
+  .to-sage-300 {
+    --tw-gradient-to: #b5c0a8;
+  }
+  .to-sage-600 {
+    --tw-gradient-to: #647355;
+  }
+  .to-sage-700 {
+    --tw-gradient-to: #505c44;
+  }
+
+  /* Lavender purples - soothing and gentle */
+  .bg-lavender-50 {
+    background-color: #f8f6fc;
+  }
+  .bg-lavender-100 {
+    background-color: #ede7f5;
+  }
+  .bg-lavender-200 {
+    background-color: #decbe8;
+  }
+  .bg-lavender-300 {
+    background-color: #c4a2d7;
+  }
+  .bg-lavender-400 {
+    background-color: #a879c4;
+  }
+  .bg-lavender-500 {
+    background-color: #8e57b2;
+  }
+  .bg-lavender-600 {
+    background-color: #7540a0;
+  }
+  .bg-lavender-700 {
+    background-color: #5c2f8a;
+  }
+
+  .text-lavender-50 {
+    color: #f8f6fc;
+  }
+  .text-lavender-100 {
+    color: #ede7f5;
+  }
+  .text-lavender-200 {
+    color: #decbe8;
+  }
+  .text-lavender-300 {
+    color: #c4a2d7;
+  }
+  .text-lavender-400 {
+    color: #a879c4;
+  }
+  .text-lavender-500 {
+    color: #8e57b2;
+  }
+  .text-lavender-600 {
+    color: #7540a0;
+  }
+  .text-lavender-700 {
+    color: #5c2f8a;
+  }
+
+  .border-lavender-100 {
+    border-color: #ede7f5;
+  }
+  .border-lavender-200 {
+    border-color: #decbe8;
+  }
+  .border-lavender-300 {
+    border-color: #c4a2d7;
+  }
+  .border-lavender-400 {
+    border-color: #a879c4;
+  }
+
+  .via-lavender-50 {
+    --tw-gradient-stops: var(--tw-gradient-from), #f8f6fc, var(--tw-gradient-to);
+  }
+  .from-lavender-200 {
+    --tw-gradient-from: #decbe8;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-lavender-300 {
+    --tw-gradient-from: #c4a2d7;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-lavender-400 {
+    --tw-gradient-from: #a879c4;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-lavender-500 {
+    --tw-gradient-from: #8e57b2;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .from-lavender-600 {
+    --tw-gradient-from: #7540a0;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  }
+  .to-lavender-200 {
+    --tw-gradient-to: #decbe8;
+  }
+  .to-lavender-300 {
+    --tw-gradient-to: #c4a2d7;
+  }
+  .to-lavender-400 {
+    --tw-gradient-to: #a879c4;
+  }
+  .to-lavender-500 {
+    --tw-gradient-to: #8e57b2;
+  }
+  .to-lavender-600 {
+    --tw-gradient-to: #7540a0;
+  }
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* Blob animation for background */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-fade-in,
+  .animate-blob {
+    animation: none;
+  }
 }
