@@ -77,15 +77,15 @@ const themeGradients = {
 
 const backgroundBlobs = {
   rainbow: [
-    { color: 'bg-pink-300', top: '20', left: '10', delay: '' },
-    { color: 'bg-purple-300', top: '40', right: '10', delay: 'animation-delay-2000' },
-    { color: 'bg-indigo-300', bottom: '20', left: '1/2', delay: 'animation-delay-4000' },
+    { color: 'bg-pink-300', top: '20', left: '10', delay: '', opacity: 'opacity-30' },
+    { color: 'bg-purple-300', top: '40', right: '10', delay: 'animation-delay-2000', opacity: 'opacity-30' },
+    { color: 'bg-indigo-300', bottom: '20', left: '1/2', delay: 'animation-delay-4000', opacity: 'opacity-30' },
   ],
-  minimal: [],
+  minimal: [] as Array<{color: string; top?: string; bottom?: string; left?: string; right?: string; delay: string; opacity: string}>,
   zen: [
-    { color: 'bg-pink-200', top: '20', left: '10', delay: '' },
-    { color: 'bg-green-200', top: '40', right: '10', delay: 'animation-delay-2000' },
-    { color: 'bg-amber-200', bottom: '20', left: '1/2', delay: 'animation-delay-4000' },
+    { color: 'bg-pink-200', top: '20', left: '10', delay: '', opacity: 'opacity-30' },
+    { color: 'bg-green-200', top: '40', right: '10', delay: 'animation-delay-2000', opacity: 'opacity-30' },
+    { color: 'bg-amber-200', bottom: '20', left: '1/2', delay: 'animation-delay-4000', opacity: 'opacity-30' },
   ],
   cyberpunk: [
     { color: 'bg-cyan-500', top: '20', left: '10', delay: '', opacity: 'opacity-20' },
@@ -93,9 +93,9 @@ const backgroundBlobs = {
     { color: 'bg-lime-500', bottom: '20', left: '1/2', delay: 'animation-delay-4000', opacity: 'opacity-20' },
   ],
   forest: [
-    { color: 'bg-emerald-300', top: '20', left: '10', delay: '' },
-    { color: 'bg-green-300', top: '40', right: '10', delay: 'animation-delay-2000' },
-    { color: 'bg-teal-300', bottom: '20', left: '1/2', delay: 'animation-delay-4000' },
+    { color: 'bg-emerald-300', top: '20', left: '10', delay: '', opacity: 'opacity-30' },
+    { color: 'bg-green-300', top: '40', right: '10', delay: 'animation-delay-2000', opacity: 'opacity-30' },
+    { color: 'bg-teal-300', bottom: '20', left: '1/2', delay: 'animation-delay-4000', opacity: 'opacity-30' },
   ],
 };
 
@@ -115,7 +115,7 @@ export default function BookmarksGrid({ bookmarks }: BookmarksGridProps) {
           {blobs.map((blob, i) => (
             <div
               key={i}
-              className={`absolute w-72 h-72 ${blob.color} rounded-full mix-blend-multiply filter blur-xl ${blob.opacity || 'opacity-30'} animate-blob ${blob.delay}`}
+              className={`absolute w-72 h-72 ${blob.color} rounded-full mix-blend-multiply filter blur-xl ${blob.opacity} animate-blob ${blob.delay}`}
               style={{ top: blob.top ? `${blob.top}%` : undefined, bottom: blob.bottom ? `${blob.bottom}%` : undefined, left: blob.left ? `${blob.left === '1/2' ? '50%' : blob.left + 'px'}` : undefined, right: blob.right ? `${blob.right}px` : undefined }}
             ></div>
           ))}
